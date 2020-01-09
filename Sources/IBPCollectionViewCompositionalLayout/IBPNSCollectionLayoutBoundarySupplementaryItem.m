@@ -26,34 +26,20 @@
 + (instancetype)boundarySupplementaryItemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                                             elementKind:(NSString *)elementKind
                                               alignment:(IBPNSRectAlignment)alignment {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutBoundarySupplementaryItem") boundarySupplementaryItemWithLayoutSize:layoutSize
-                                                                                                              elementKind:elementKind
-                                                                                                                alignment:alignment
-                                                                                                           absoluteOffset:CGPointZero];
-    } else {
-        return [self boundarySupplementaryItemWithLayoutSize:layoutSize
-                                                 elementKind:elementKind
-                                                   alignment:alignment
-                                              absoluteOffset:CGPointZero];
-    }
+	return [self boundarySupplementaryItemWithLayoutSize:layoutSize
+											 elementKind:elementKind
+											   alignment:alignment
+										  absoluteOffset:CGPointZero];
 }
 
 + (instancetype)boundarySupplementaryItemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                                             elementKind:(NSString *)elementKind
                                               alignment:(IBPNSRectAlignment)alignment
                                          absoluteOffset:(CGPoint)absoluteOffset {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutBoundarySupplementaryItem") boundarySupplementaryItemWithLayoutSize:layoutSize
-                                                                                                              elementKind:elementKind
-                                                                                                                alignment:alignment
-                                                                                                           absoluteOffset:absoluteOffset];
-    } else {
-        return [[self alloc] initWithLayoutSize:layoutSize
-                                    elementKind:elementKind
-                                      alignment:alignment
-                                 absoluteOffset:absoluteOffset];
-    }
+	return [[self alloc] initWithLayoutSize:layoutSize
+								elementKind:elementKind
+								  alignment:alignment
+							 absoluteOffset:absoluteOffset];
 }
 
 - (instancetype)initWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize

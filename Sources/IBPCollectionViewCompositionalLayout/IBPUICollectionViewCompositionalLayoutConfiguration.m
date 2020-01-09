@@ -17,17 +17,13 @@
 }
 
 - (instancetype)init {
-    if (@available(iOS 13, *)) {
-        return [[NSClassFromString(@"UICollectionViewCompositionalLayoutConfiguration") alloc] init];
-    } else {
-        self = [super init];
-        if (self) {
-            self.scrollDirection = UICollectionViewScrollDirectionVertical;
-            self.interSectionSpacing = 0;
-            self.boundarySupplementaryItems = @[];
-        }
-        return self;
-    }
+	self = [super init];
+	if (self) {
+		self.scrollDirection = UICollectionViewScrollDirectionVertical;
+		self.interSectionSpacing = 0;
+		self.boundarySupplementaryItems = @[];
+	}
+	return self;
 }
 
 - (nonnull id)copyWithZone:(nullable NSZone *)zone {

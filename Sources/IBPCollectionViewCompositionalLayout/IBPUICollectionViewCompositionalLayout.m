@@ -46,39 +46,23 @@
 @implementation IBPUICollectionViewCompositionalLayout
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section {
-    if (@available(iOS 13, *)) {
-        return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSection:section];
-    } else {
-        IBPUICollectionViewCompositionalLayoutConfiguration *configuration = [IBPUICollectionViewCompositionalLayoutConfiguration defaultConfiguration];
-        return [self initWithSection:section configuration:configuration];
-    }
+	IBPUICollectionViewCompositionalLayoutConfiguration *configuration = [IBPUICollectionViewCompositionalLayoutConfiguration defaultConfiguration];
+	return [self initWithSection:section configuration:configuration];
 }
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section
                   configuration:(IBPUICollectionViewCompositionalLayoutConfiguration *)configuration {
-    if (@available(iOS 13, *)) {
-        return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSection:section configuration:configuration];
-    } else {
-        return [self initWithSection:section sectionProvider:nil configuration:configuration];
-    }
+	return [self initWithSection:section sectionProvider:nil configuration:configuration];
 }
 
 - (instancetype)initWithSectionProvider:(IBPUICollectionViewCompositionalLayoutSectionProvider)sectionProvider {
-    if (@available(iOS 13, *)) {
-        return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSectionProvider:sectionProvider];
-    } else {
-        IBPUICollectionViewCompositionalLayoutConfiguration *configuration = [IBPUICollectionViewCompositionalLayoutConfiguration defaultConfiguration];
-        return [self initWithSectionProvider:sectionProvider configuration:configuration];
-    }
+	IBPUICollectionViewCompositionalLayoutConfiguration *configuration = [IBPUICollectionViewCompositionalLayoutConfiguration defaultConfiguration];
+	return [self initWithSectionProvider:sectionProvider configuration:configuration];
 }
 
 - (instancetype)initWithSectionProvider:(IBPUICollectionViewCompositionalLayoutSectionProvider)sectionProvider
                           configuration:(IBPUICollectionViewCompositionalLayoutConfiguration *)configuration {
-    if (@available(iOS 13, *)) {
-        return [[NSClassFromString(@"UICollectionViewCompositionalLayout") alloc] initWithSectionProvider:sectionProvider configuration:configuration];
-    } else {
-        return [self initWithSection:nil sectionProvider:sectionProvider configuration:configuration];
-    }
+	return [self initWithSection:nil sectionProvider:sectionProvider configuration:configuration];
 }
 
 - (instancetype)initWithSection:(IBPNSCollectionLayoutSection *)section

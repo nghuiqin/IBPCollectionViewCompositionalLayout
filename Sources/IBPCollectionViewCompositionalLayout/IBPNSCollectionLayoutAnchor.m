@@ -22,19 +22,11 @@ static IBPNSDirectionalRectEdge EdgesFromAnchorPoint(CGPoint anchorPoint);
 }
 
 + (instancetype)layoutAnchorWithEdges:(IBPNSDirectionalRectEdge)edges absoluteOffset:(CGPoint)absoluteOffset {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutAnchor") layoutAnchorWithEdges:edges absoluteOffset:absoluteOffset];
-    } else {
-        return [[self alloc] initWithEdges:edges offset:absoluteOffset anchorPoint:AnchorPointFromEdges(edges) offsetIsUnitOffset:NO];
-    }
+	return [[self alloc] initWithEdges:edges offset:absoluteOffset anchorPoint:AnchorPointFromEdges(edges) offsetIsUnitOffset:NO];
 }
 
 + (instancetype)layoutAnchorWithEdges:(IBPNSDirectionalRectEdge)edges fractionalOffset:(CGPoint)fractionalOffset {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutAnchor") layoutAnchorWithEdges:edges fractionalOffset:fractionalOffset];
-    } else {
-        return [[self alloc] initWithEdges:edges offset:fractionalOffset anchorPoint:AnchorPointFromEdges(edges) offsetIsUnitOffset:YES];
-    }
+	return [[self alloc] initWithEdges:edges offset:fractionalOffset anchorPoint:AnchorPointFromEdges(edges) offsetIsUnitOffset:YES];
 }
 
 + (instancetype)layoutAnchorWithAnchorPoint:(CGPoint)anchorPoint {
@@ -42,19 +34,11 @@ static IBPNSDirectionalRectEdge EdgesFromAnchorPoint(CGPoint anchorPoint);
 }
 
 + (instancetype)layoutAnchorWithAnchorPoint:(CGPoint)anchorPoint offset:(CGPoint)offset {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutAnchor") layoutAnchorWithAnchorPoint:anchorPoint offset:offset];
-    } else {
-        return [[self alloc] initWithEdges:EdgesFromAnchorPoint(anchorPoint) offset:offset anchorPoint:anchorPoint offsetIsUnitOffset:NO];
-    }
+	return [[self alloc] initWithEdges:EdgesFromAnchorPoint(anchorPoint) offset:offset anchorPoint:anchorPoint offsetIsUnitOffset:NO];
 }
 
 + (instancetype)layoutAnchorWithAnchorPoint:(CGPoint)anchorPoint unitOffset:(CGPoint)unitOffset {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutAnchor") layoutAnchorWithAnchorPoint:anchorPoint unitOffset:unitOffset];
-    } else {
-        return [[self alloc] initWithEdges:EdgesFromAnchorPoint(anchorPoint) offset:unitOffset anchorPoint:anchorPoint offsetIsUnitOffset:YES];
-    }
+	return [[self alloc] initWithEdges:EdgesFromAnchorPoint(anchorPoint) offset:unitOffset anchorPoint:anchorPoint offsetIsUnitOffset:YES];
 }
 
 - (instancetype)initWithEdges:(IBPNSDirectionalRectEdge)edges offset:(CGPoint)offset anchorPoint:(CGPoint)anchorPoint offsetIsUnitOffset:(BOOL)offsetIsUnitOffset {

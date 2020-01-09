@@ -8,20 +8,12 @@
 @implementation IBPNSCollectionLayoutItem
 
 + (instancetype)itemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutItem") itemWithLayoutSize:layoutSize];
-    } else {
-        return [self itemWithLayoutSize:layoutSize supplementaryItems:@[]];
-    }
+	return [self itemWithLayoutSize:layoutSize supplementaryItems:@[]];
 }
 
 + (instancetype)itemWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize
                 supplementaryItems:(NSArray<IBPNSCollectionLayoutSupplementaryItem *> *)supplementaryItems {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutItem") itemWithLayoutSize:layoutSize supplementaryItems:supplementaryItems];
-    } else {
-        return [[self alloc] initWithLayoutSize:layoutSize supplementaryItems:supplementaryItems];
-    }
+	return [[self alloc] initWithLayoutSize:layoutSize supplementaryItems:supplementaryItems];
 }
 
 - (instancetype)initWithLayoutSize:(IBPNSCollectionLayoutSize *)layoutSize supplementaryItems:(NSArray<IBPNSCollectionLayoutSupplementaryItem *> *)supplementaryItems {

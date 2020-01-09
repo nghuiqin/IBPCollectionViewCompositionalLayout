@@ -5,11 +5,7 @@
 @implementation IBPNSCollectionLayoutSection
 
 + (instancetype)sectionWithGroup:(IBPNSCollectionLayoutGroup *)group {
-    if (@available(iOS 13, *)) {
-        return [NSClassFromString(@"NSCollectionLayoutSection") sectionWithGroup:group];
-    } else {
-        return [[self alloc] initWithGroup:group];
-    }
+	return [[self alloc] initWithGroup:group];
 }
 
 - (instancetype)initWithGroup:(IBPNSCollectionLayoutGroup *)group {
