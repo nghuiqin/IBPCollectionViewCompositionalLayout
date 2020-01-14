@@ -141,7 +141,7 @@
         collectionView.delegate = self;
     }
 
-    [self resetState];
+//    [self resetState];
 
     UIEdgeInsets collectionContentInset = UIEdgeInsetsZero;
     if (@available(iOS 11.0, *)) {
